@@ -3,8 +3,9 @@ import { ProjectsService } from './projects.service';
 import { ProjectsController } from './projects.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Project } from './entities/projects.entity';
+import { PaginationModule } from '../pagination/pagination.module';
 @Module({
-  imports: [TypeOrmModule.forFeature([Project])],
+  imports: [PaginationModule, TypeOrmModule.forFeature([Project])],
   controllers: [ProjectsController],
   providers: [ProjectsService],
 })
